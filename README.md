@@ -1,9 +1,8 @@
-# JS-PiyushGarg
-Youtube JS playlist
-
+# Javascript PiyushGarg
+Javascript youtube playlist (32 Lessons)
 <br>
 
-### Working Timeline :
+#### Working Timeline :
 
 -----
 
