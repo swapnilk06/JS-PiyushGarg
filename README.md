@@ -2,9 +2,8 @@
 Youtube JS playlist
 
 <br>
-<br>
 
-## Working Timeline :
+### Working Timeline :
 
 -----
 
