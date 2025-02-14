@@ -3,12 +3,14 @@ Youtube JS playlist
 
 <br>
 <br>
-## Working Timeline :
 
+## Working Timeline :
 
 -----
 
-### 1] - Intro to Javascript - `[08-02-25]`
+`[07-02-25]`
 
-### 2] - 
+### 1] - Intro to Javascript
+
+### 2] - Variables in Javascript 
 
