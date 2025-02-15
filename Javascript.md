@@ -22,7 +22,7 @@
 ### Varaibles 
 <br>
 
-1] var :
+#### 1] var :
 - var is a keyword, which stand for variable
 - old time in JS only `var` is present for creating variable.
 <br>
@@ -71,9 +71,9 @@ console.log(age);
 <br>
 
 #### var property - 
-- variables have -> `Global scope`
+- variable have -> `Global scope`
 - variables are not binded with any scope. 
-- E.g. - var have global scope 
+- E.g. - var have global scope i.e. its also accessed out of scope also.
 ```JS
 if (true) {
 	var age = 23; // variable age in local scope
@@ -82,140 +82,156 @@ if (true) {
 console.log(age); // 23 
 // using "var" anyplace we create variable & anytime we accessed it.
 ```
+<br>
 
-10 min 
+- var is `Global Scope`
+- Variables are not binded with any scope.
+- We create any variable using var, through out program they access anywhere.
+- No matter that var created in local function or local if else..
+- Using `var` any position we create variable & anytime we access variable.
+<br>
 
 
-
-
-
-E.g. 
-
+#### Special thing of var
+E.g. - Give error without defined 
+```JS
 console.log(age); // give Error age not defined
----
+```
+<br>
 
-after-->
-
-console.log(age);   // undefined 
+E.g. - var defined after print, but not give error 
+```JS
+console.log(age); // undefined // but not give error
+// age come first in memory but they not idea about age value i.e. shows `undefined`
 var age = 10;   
 console.log(age); // 10 
+```
+<br>
 
-// var -> global scope but not same for 'let' & 'const' cases 
+[!NOTE]
+> - var -> is global scope but, not same for 'let' & 'const' cases i.e. are Local Scope.
+<br>
 
-var global scope e.g. -
 
+E.g. - `var` in global scope
+```JS
 {
 	var a = 10;
 }
+console.log(a); // 10 // a that also access out of scope
+```
+<br>
 
-console.log(a); // 10 // --> that also access out of scope
+[!IMPORTANT]
+> - `var` also accessed in console & also change that value in console bcz of global scope.
+> - let & const scope always in local.
+> - Datatype in JS are assigned Dynamically.
+<br>
 
-// var also accessed in console & also change that value in console bcz of global scope.
 
-
-// let & const scope always in local
-// Datatype in JS are assigned Dynamically.
-
-2] Let : 
-
+#### 2] let :
+- `Let` always in local scope.
+E.g. Wrong but, valid operation in JS
+```JS
 let age = 22;
-
 age = "Piyush";  // valid operation in JS
-
 console.log(age);
+```
+<br>
 
-// let scope always in local
-
-
-let local scope e.g. -
-
+E.g. `let` is in local scope
+```JS
 if (true) {
 	let a = 20;
+	console.log(a);  // 20 // a is in local scope
 }
-
 console.log(a); // a is not defined // becz, let not global scope 
+```
+<br>
 
-------------
-
-if (true) {
-	let a = 20;
-	console.log(a);  // 20
-}
-
+> [!NOTE]
+> - Perfer to choose always `let` as compared with var.
+<br>
 
 
-3] const :
-
-const local scope e.g. -
-
+#### 3] const :
+- `const` always local scope.
+E.g. - const is in local scope can't access out of scope
+```JS
 if(true) {
 	const a = 10;
 }
-
 console.log(a); // a is not defined // becz, let not global scope 
+```
+<br>
 
-
-
-
-e.g. const value doesnot re-aasign
-
-const age = 22; 
-
+E.g. - const value doesn't re-aasign after defined
+```JS
+const age = 22; // 22 that value is fixed that not changed after it
+age = 30;  // Type Error : Assignment to constant variable
 age = "Piyush";  // Type Error : Assignment to constant variable
-// const value doesnot re-assign
+```
+<br>
 
+- `const` always local scope & const value doesn't re-assign after defined.
+- In case of const compulsory defined any value (not undefined value of const whenever const is used).
+ ```JS
+const age; // Error : that not undefined
+age = 20; // Is not possible
+```
+- Access `const` value, operation on it, but `doesn't change age value or its datatype`.
+<br>
 
-// In let & var also work without assign value of variable but cost do not work without assign value
-e.g. 
+> [!NOTE]
+> - In let & var also work without assign value of variable but const do not work without assign value.
+> ```JS
+>  let age;
+>  console.log(age); // undefined
+>  age = 30;
+>  console.log(age); // 30
+> ```
+> - In const case variable doesn't work without initialize becz, const case not undefined at initialize.
+> ```JS
+>  const age;
+>  age = 20;  // not possible
+> ```
+> - Access, modify const value but, not change that datatype & value.
+> ```JS
+>  const age = 30;  // that value is fixed
+>  console.log(age + 10); // 40 // but not change age value
+> ```
+<br>
 
-let age;
+> [!IMPORTANT]
+> - Variable -> 3 types of declaration :-
+> - var, let, const
+> - const - in production 90% used const
+<br>
 
-console.log(age); // undefined
-
-age = 30;
-
-console.log(age); // 30
-
-
-// In const case variable doesn't work without initialize becz, const case not undefined at initialize 
-
-const age;
-
-age = 20;  // not possible
-
-
-// access, modify const value but not change that datatype & value e.g.
-
-const age = 30;  // that value is fixed
-
-console.log(age + 10); // 40 // but not change age value
-
-
------
-Difference between var vs let
+### Difference in between var VS let VS Const
 
 var : Global Scope
-// re-assign var 
-// var as global scope ( not recommand gets unwanted bug through) 
-// access anywhere 
+- also re-assign var 
+- var as global scope (not recommand gets unwanted bug through) 
+- access anywhere 
 
 let : Local Scope
-// re-assign let 
-// let as local scope (highly recommended choose 'let' always)
-// access only in self of block 
-// let avialable in newer versions of JS
+- also re-assign let 
+-  let as local scope (highly recommended choose 'let' always)
+- access it only in self of block 
+- let avialable in newer versions of JS
 
 const : Local Scope
-// not re-assign const 
-// const as local scope (in production 90% used 'const')
-// access only in self of block 
+- not re-assign const 
+- const as local scope (in production 90% used 'const')
+- access only in self of block 
+<br>
 
----------
+-------------------
+<br>
+
+## 3] 
 
 
-Variable -> 3 types of declaration
-var, let, const
 
-
-const - in production & 90% used const
 
